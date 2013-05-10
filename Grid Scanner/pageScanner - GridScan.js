@@ -9,13 +9,13 @@ if (window.jQuery === undefined || window.jQuery.fn.jquery < v) { // If the curr
 	script.onload = script.onreadystatechange = function(){
 		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
 			done = true;
-			jsonp("https://raw.github.com/dgMillard/CiscoWork/master/Grid Scanner/jsonRules.js");
+			jsonp("https://raw.github.com/dgMillard/jsCode/master/Grid Scanner/jsonRules.js");
 		}
 	};
 	document.getElementsByTagName("head")[0].appendChild(script);
 	}
 	else{
-		jsonp("https://raw.github.com/dgMillard/CiscoWork/master/Grid Scanner/jsonRules.js"); // Pull in our json file
+		jsonp("https://raw.github.com/dgMillard/jsCode/master/Grid Scanner/jsonRules.js"); // Pull in our json file
 	}
 function jsonp(url) { //Pull in the JSON after jQuery loads
 	var done = false;
