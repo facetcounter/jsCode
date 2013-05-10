@@ -1,0 +1,15 @@
+ Page/Element Scanner:
+- ONLY the specified element content can exist; if anything else exists it causes a failure (DONE)
+ - run a custom rule (DONE)
+ - Seperate validation and display(DONE)
+ Grid Scanner:
+ - Find the grid (DONE)
+ - the immediate children of the grid are regions (DONE)
+ - for each region, look inside (DONE)
+ - if the immediate child of the region is another nested grid, for now just mark it (later we will recursive parse) (DONE)
+ - if the immediate child of the region is a component that's recognized based on 
+      one of the rules you already have implemented, mark it (DONE)
+ - if the immediate child is neither or there is more than one immediate child, mark it as a blob. (DONE)
+ - if you don't find a grid on the page, mark the page as failed (Unneeded?)
+ - report on what the grid's parent is (DONE)
+
