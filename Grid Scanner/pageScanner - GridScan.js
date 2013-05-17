@@ -88,7 +88,7 @@ window.componentValidator = {
 							if(!grandChildren[i].id == "")
 								results.push("ID: " + grandChildren[i].id+" <br>");
 							else
-								results.push("<br");
+								results.push("<br>");
 						}
 						isBlob = true;	
 					}
