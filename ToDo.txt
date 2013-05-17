@@ -6,10 +6,9 @@
  - Find the grid (DONE)
  - the immediate children of the grid are regions (DONE)
  - for each region, look inside (DONE)
- - if the immediate child of the region is another nested grid, for now just mark it (later we will recursive parse) (DONE)
- - if the immediate child of the region is a component that's recognized based on 
-      one of the rules you already have implemented, mark it (DONE)
- - if the immediate child is neither or there is more than one immediate child, mark it as a blob. (DONE)
- - if you don't find a grid on the page, mark the page as failed (Unneeded?)
+  - for each immediate child of the region:
+   - if the child is clb or mlb-pilot try to validate it and mark it
+   - if the immediate child of the region is another nested grid, (either just mark it)(or recursive parse) (DONE)
+   - if it's not, mark it as a sub-blob
  - report on what the grid's parent is (DONE)
 
