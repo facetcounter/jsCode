@@ -84,7 +84,11 @@ window.componentValidator = {
 						results.push("Fatal: " + children[c].className + " contains multiple elements.<br>");
 						for( var i=0; i < children[c].childElementCount;i++)
 						{
-							results.push(indent + "Class: " + grandChildren[i].className + indent + "ID: " + grandChildren[i].id+" <br>");
+							results.push(indent + "Class: " + grandChildren[i].className + indent);
+							if(!grandChildren[i].id == "")
+								results.push("ID: " + grandChildren[i].id+" <br>");
+							else
+								results.push("<br");
 						}
 						isBlob = true;	
 					}
