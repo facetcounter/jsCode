@@ -9,15 +9,16 @@ if (window.jQuery === undefined || window.jQuery.fn.jquery < v) { // If the curr
 	script.onload = script.onreadystatechange = function(){
 		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
 			done = true;
-			jsonp("https://raw.github.com/dgMillard/jsCode/master/Grid Scanner/jsonRules.js");
+			componentScannerLink();
+		
 		}
 	};
 	document.getElementsByTagName("head")[0].appendChild(script);
 	}
 	else{
-		jsonp("https://raw.github.com/dgMillard/jsCode/master/Grid Scanner/jsonRules.js"); // Pull in our json file
+		componentScannerLink();
 	}
-function jsonp(url) { //Pull in the JSON after jQuery loads
+function jsonp(url) { //Pull in the JSON after validator loads
 	var done = false;
 	var head = document.head;
 	var script = document.createElement("script");
@@ -29,7 +30,19 @@ function jsonp(url) { //Pull in the JSON after jQuery loads
 	};
 	document.body.appendChild(script); // Run the json file. Links callback to componentValidator.run().
 }
-
+function componentScannerLink(url) { //Pull in the validator after jQuery loads
+	var done = false;
+	var head = document.head;
+	var script = document.createElement("script");
+	script.setAttribute("src", url);
+ 	script.onload = script.onreadystatechange = function(){
+		if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
+			done = true;
+		}
+	};
+	document.body.appendChild(script); // Add the new windowComponent
+	jsonp("https://raw.github.com/dgMillard/jsCode/master/Grid Scanner/jsonRules.js"); // Add the json, calls componentValidator.run
+}
 window.componentValidator = {
 	run:function(jsonData){
 		this.rules = jsonData;
