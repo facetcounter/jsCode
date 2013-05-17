@@ -74,7 +74,5 @@ window.componentValidator.validate = function(component, jsonData){
 			results.push("No targets of class: " + this.rules.ruleSet[i].target + " were found on this page.<br>"); // Log that it was not present
 		}
 	}
-	results.push("_________________________________________________<br><br>"); // After the script runs, add a divider line so subsequent runs are held seperate.
-	
-	this.display(results);
+	return results;
 }
